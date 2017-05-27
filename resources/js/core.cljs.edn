@@ -1,0 +1,2 @@
+{:require  [meetup.core]
+ :compiler-options {:asset-path "js/core.out"}}
