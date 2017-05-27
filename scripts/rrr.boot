@@ -68,7 +68,6 @@
    ["google" "gdg" "gdgkorea"]
    (MeetupContent.)
    {
-    :id  "1",
     :title "GDG Korea WebTech meetup",
     :url "https://gdg-korea-webtech.firebaseapp.com/events/meetup-20170223/",
     :start "2017-02-23 19:30:00",
@@ -91,9 +90,3 @@
 
 ;; https://fullcalendar.io/docs/event_rendering/eventColor/
 (def eventColor_schema schema/Str)
-
-
-
-
-
-;;
