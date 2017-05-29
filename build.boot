@@ -24,6 +24,10 @@
    [bidi "2.1.1"]
    [venantius/accountant "0.2.0"]
 
+
+   ;; jquery
+   [jayq "2.5.4"]
+
    ;; ajax
    [cljs-ajax "0.6.0"]
 
@@ -101,7 +105,7 @@
    (cljs :optimizations :advanced :source-map false)
 
    ;; https://github.com/boot-clj/boot/blob/master/doc/boot.task.built-in.md#sift
-   (sift :include #{#"(^index\.html|^js\/core\.js)"})
+   (sift :include #{#"(^index\.html|^js\/core\.js|^data\/events.json|^style\/*)"})
 
    ;; https://github.com/boot-clj/boot/blob/master/doc/boot.task.built-in.md#target
    (target :dir #{"__BUILD"})))

@@ -14,7 +14,7 @@
 
    [schema.core :as schema :include-macros true]
    [bidi.bidi :as bidi]
-   [bidi.schema]
+   ;; [bidi.schema]
    [accountant.core :as accountant]
    [reagent.core :as reagent]
    [reagent.session :as session]
@@ -197,7 +197,7 @@
      [NavItem {:eventKey :list :href (bidi/path-for app-routes :list)}
       [:i.fa.fa-list {:aria-hidden true}] "LIST"]
      [NavItem {:eventKey :chat :href (bidi/path-for app-routes :chat)}
-      [:i.fa.fa-list {:aria-hidden true}] "CHAT"]
+      [:i.fa.fa-comments {:aria-hidden true}] "CHAT"]
      ]]])
 
 (defn page

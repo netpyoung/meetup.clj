@@ -1,0 +1,1 @@
+{:externs ["fullcalendar.ext.js"]}
