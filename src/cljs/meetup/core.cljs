@@ -28,7 +28,7 @@
 
 
 (def app-routes
-  ["./"
+  ["/"
    [["" :index]
     ["list" :list]
     ["chat" :chat]
@@ -187,7 +187,7 @@
   [Navbar
    [Navbar-Header
     [Navbar-Brand
-     [:a {:href "/"} [:i.fa.fa-home {:aria-hidden true}]]]
+     [:a {:href (bidi/path-for app-routes :index)} [:i.fa.fa-home {:aria-hidden true}]]]
     [Navbar-Toggle]]
 
    [Navbar-Collapse
