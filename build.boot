@@ -108,4 +108,4 @@
    (sift :include #{#"(^index\.html|^js\/core\.js|^data\/events.json|^style\/*)"})
 
    ;; https://github.com/boot-clj/boot/blob/master/doc/boot.task.built-in.md#target
-   (target :dir #{"__BUILD"})))
+   (target :dir #{"docs"})))

@@ -1,0 +1,36 @@
+* {margin: 0; padding: 0;}
+html {height: 100%}
+
+html,
+body {
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+
+
+  position: absolute;
+  width: 100% !important;
+  height: 100% !important;
+  overflow:auto;
+  min-height:100%;
+
+
+}
+
+iframe {
+    height: 100%;
+    width: 100%;
+    border: 0;
+}
+
+.fc-event:visited {
+    color: #ffffff;
+}
+
+.footer-href {
+    color: #337ab7;
+}
+
+.footer-icon {
+    color: #337ab7;
+}
