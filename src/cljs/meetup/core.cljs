@@ -28,7 +28,7 @@
 
 
 (def app-routes
-  ["/"
+  ["./"
    [["" :index]
     ["list" :list]
     ["chat" :chat]
