@@ -38,7 +38,8 @@
    [Navbar-Collapse
     [Nav {:pullRight true :activeKey page}
      [NavItem {:href "https://www.meetup.com/clojure-tokyo/"}
-      [:img {:src (str base-url "/images/clojure.tokyo.jpeg")}] clojure.tokyo]
+      [:img {:src (str base-url "/images/clojure.tokyo.jpeg")
+             :style {:height "100%" :width "auto"}}]]
      [NavItem {:eventKey :index :href (bidi/path-for app-routes :index)}
       [:i.fa.fa-calendar {:aria-hidden true}] "CALENDAR"]
      [NavItem {:eventKey :list :href (bidi/path-for app-routes :list)}

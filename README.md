@@ -3,3 +3,10 @@ It inspired of [dev-meetup](https://dev-meetup.github.io/). But It is written in
 
 
 We’ll find a way. We always have. -Cooper #Interstellar
+
+
+# TODO
+[ ] pull request && ci process
+[ ] presentation page
+[ ] input page
+[ ] refactoring
