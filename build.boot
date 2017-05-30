@@ -106,7 +106,7 @@
    (cljs :optimizations :advanced :source-map false)
 
    ;; https://github.com/boot-clj/boot/blob/master/doc/boot.task.built-in.md#sift
-   (sift :include #{#"(^index\.html|^js\/core\.js|^data\/events.json|^style\/*)"})
+   (sift :include #{#"(^index\.html|^js\/core\.js|^data\/*|^style\/*)"})
 
    ;; https://github.com/boot-clj/boot/blob/master/doc/boot.task.built-in.md#target
    (target :dir #{"docs"})))
