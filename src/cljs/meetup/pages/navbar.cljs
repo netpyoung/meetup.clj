@@ -18,13 +18,15 @@
   (reagent/adapt-react-class (aget js/ReactBootstrap.Navbar "Toggle")))
 
 (def Navbar-Collapse
- (reagent/adapt-react-class (aget js/ReactBootstrap.Navbar "Collapse")))
+  (reagent/adapt-react-class (aget js/ReactBootstrap.Navbar "Collapse")))
 
 (def Nav
   (reagent/adapt-react-class (aget js/ReactBootstrap "Nav")))
 
 (def NavItem
   (reagent/adapt-react-class (aget js/ReactBootstrap "NavItem")))
+
+(def base-url "/meetup.clj")
 
 (defn navbar [app-routes page]
   [Navbar
@@ -35,6 +37,8 @@
 
    [Navbar-Collapse
     [Nav {:pullRight true :activeKey page}
+     [NavItem {:href "https://www.meetup.com/clojure-tokyo/"}
+      [:img {:src (str base-url "/images/clojure.tokyo.jpeg")}] clojure.tokyo]
      [NavItem {:eventKey :index :href (bidi/path-for app-routes :index)}
       [:i.fa.fa-calendar {:aria-hidden true}] "CALENDAR"]
      [NavItem {:eventKey :list :href (bidi/path-for app-routes :list)}

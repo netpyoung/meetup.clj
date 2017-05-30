@@ -1,6 +1,5 @@
-http://tonsky.me/blog/readable-clojure/
-http://react-toolbox.com/
-https://react-bootstrap.github.io/components.html
+I want to website for share idea, meetup date or something.
+It inspired of [dev-meetup](https://dev-meetup.github.io/). But It is written in [Clojure](https://clojure.org/).
 
-* edn <-> json : http://cljson.com/
-* pretty edn : http://pretty-print.net/
+
+We’ll find a way. We always have. -Cooper #Interstellar
