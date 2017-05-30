@@ -6,7 +6,7 @@
 
 (defn component
   [opt]
-  (let [options (reagent/atom {})]
+  (let [options (reagent/atom opt)]
     (reagent/create-class
      {:component-did-mount
       (fn [this]

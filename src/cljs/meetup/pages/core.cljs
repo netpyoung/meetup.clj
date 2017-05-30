@@ -17,8 +17,12 @@
    )
   )
 
+;; TODO: need to handle fullcalendar's `googleCalendarError`
+
+(def base-url "https://netpyoung.github.io/meetup.clj")
+
 (def app-routes
-  ["/"
+  [(str base-url "/")
    [["" :index]
     ["list" :list]
     ["chat" :chat]
@@ -47,7 +51,7 @@
     :eventLimit true
     :events
     (fn [start, end, timezone, callback]
-      (ajax/GET "/data/events.edn"
+      (ajax/GET (str base-url "/data/events.edn")
                 {:response-format (edn/edn-response-format)
                  :handler
                  (fn [resp]
@@ -63,9 +67,27 @@
                    )
                  })
       )
+
+    ;; https://fullcalendar.io/docs/google_calendar/
+    :googleCalendarApiKey
+    "AIzaSyBzjvpScabjRmNgYM6xDmZQnAKRLy9j_iE"
+
+    :eventSources
+    [{:googleCalendarId
+      "jmnbmacphf206ju2ulmda01n9k@group.calendar.google.com" :color "blue"}]
+
+    ;; https://fullcalendar.io/docs/mouse/eventClick/
     :eventClick
-    (fn [calEvent, jsEvent, view]
+    (fn [event, jsEvent, view]
       (js/alert "hi")
+      false)
+
+    ;; https://fullcalendar.io/docs/selection/select_method/
+    :selectable true
+    :select
+    (fn [start, end, jsEvent, view]
+      (js/alert "[TODO] need to make add page")
+      ;; # react-popup : http://minutemailer.github.io/react-popup/
       false)
     }])
 
@@ -87,7 +109,7 @@
     :eventLimit true
     :events
     (fn [start, end, timezone, callback]
-      (ajax/GET "/data/events.edn"
+      (ajax/GET (str base-url "/data/events.edn")
                 {:response-format (edn/edn-response-format)
                  :handler
                  (fn [resp]

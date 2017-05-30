@@ -8,6 +8,7 @@
  '[
    ;; dep
    [org.clojure/clojure "1.8.0"]
+   [org.clojure/clojurescript "1.9.542"]
 
    ;; http://cljsjs.github.io/
    [cljsjs/material-ui "0.18.1-0"]
@@ -29,8 +30,7 @@
    ;; jquery
    [jayq "2.5.4"]
 
-   ;; ajax
-   ;; https://github.com/JulianBirch/cljs-ajax
+   ;; ajax - https://github.com/JulianBirch/cljs-ajax
    [cljs-ajax "0.6.0"]
 
    ;; json
@@ -54,8 +54,6 @@
    [weasel                  "0.7.0"  :scope "test"]
    [org.clojure/tools.nrepl "0.2.12" :scope "test"]
 
-   ;; for compile
-   [org.clojure/clojurescript "1.9.542"]
    ]
  )
 
