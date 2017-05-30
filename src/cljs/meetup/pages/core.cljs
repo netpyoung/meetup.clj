@@ -19,7 +19,7 @@
 
 ;; TODO: need to handle fullcalendar's `googleCalendarError`
 
-(def base-url "https://netpyoung.github.io/meetup.clj")
+(def base-url "/meetup.clj")
 
 (def app-routes
   [(str base-url "/")
