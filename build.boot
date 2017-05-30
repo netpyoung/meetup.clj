@@ -8,12 +8,13 @@
  '[
    ;; dep
    [org.clojure/clojure "1.8.0"]
+
+   ;; http://cljsjs.github.io/
    [cljsjs/material-ui "0.18.1-0"]
    [cljsjs/hammer "2.0.4-5"]
    [cljsjs/moment "2.17.1-1"]
-   [cljsjs/react-bootstrap "0.30.7-0"] ;; latest release
-
-
+   [cljsjs/react-bootstrap "0.30.7-0"]
+   [cljsjs/google-maps "3.18-1"]
 
    ;; reagent
    [reagent "0.6.2"
@@ -29,6 +30,7 @@
    [jayq "2.5.4"]
 
    ;; ajax
+   ;; https://github.com/JulianBirch/cljs-ajax
    [cljs-ajax "0.6.0"]
 
    ;; json
@@ -88,7 +90,8 @@
    (serve :port 8080)
    (watch)
    (cljs-repl)
-   (reload :on-jsload 'meetup.core/start)
+   ;; (reload :on-jsload 'meetup.core/start)
+   (reload :on-jsload 'meetup.dev/start)
    (speak)
    (cljs :optimizations :none :source-map true)))
 
