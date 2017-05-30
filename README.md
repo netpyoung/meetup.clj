@@ -6,7 +6,11 @@ We’ll find a way. We always have. -Cooper #Interstellar
 
 
 # TODO
-[ ] pull request && ci process
-[ ] presentation page
-[ ] input page
-[ ] refactoring
+- [ ] pull request && ci process
+- [ ] presentation page
+- [ ] input page
+- [ ] refactoring
+- [ ] gzip script
+
+# ref
+* http://d2.naver.com/helloworld/303083
