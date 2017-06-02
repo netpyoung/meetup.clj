@@ -1,5 +1,6 @@
 (ns meetup.pages.core
   (:require
+   [meetup.config :as config]
    [meetup.components.fullcalendar :as fullcalendar]
    [meetup.components.gitter :as gitter]
 
@@ -19,10 +20,12 @@
 
 ;; TODO: need to handle fullcalendar's `googleCalendarError`
 
-(def base-url "/meetup.clj")
+;; https://www.meetup.com/meetup_api/docs/:urlname/events/?uri=%2Fmeetup_api%2Fdocs%2F%3Aurlname%2Fevents%2F#list
+
+
 
 (def app-routes
-  [(str base-url "/")
+  [(str config/BASE-URL "/")
    [["" :index]
     ["list" :list]
     ["chat" :chat]
@@ -51,7 +54,7 @@
     :eventLimit true
     :events
     (fn [start, end, timezone, callback]
-      (ajax/GET (str base-url "/data/events.edn")
+      (ajax/GET (str config/BASE-URL "/data/events.edn")
                 {:response-format (edn/edn-response-format)
                  :handler
                  (fn [resp]
@@ -109,7 +112,7 @@
     :eventLimit true
     :events
     (fn [start, end, timezone, callback]
-      (ajax/GET (str base-url "/data/events.edn")
+      (ajax/GET (str config/BASE-URL "/data/events.edn")
                 {:response-format (edn/edn-response-format)
                  :handler
                  (fn [resp]

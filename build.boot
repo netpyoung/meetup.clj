@@ -2,8 +2,6 @@
 (def version "0.1.0-SNAPSHOT")
 
 (set-env!
- :source-paths   #{"src/clj" "src/cljs"}
- :resource-paths #{"resources"}
  :dependencies
  '[
    ;; dep
@@ -84,6 +82,11 @@
 (bootlaces! version :dont-modify-paths? true)
 
 (deftask dev []
+  (set-env!
+   :source-paths   #{"src/clj" "src/cljs" "config/dev"}
+   :resource-paths #{"resources"}
+   )
+
   (comp
    (serve :port 8080)
    (watch)
@@ -99,14 +102,20 @@
 ;;   []
 ;;   (comp (pom) (jar) (install)))
 
-(deftask build
+(deftask prod
   []
+  (set-env!
+   :source-paths   #{"src/clj" "src/cljs" "config/prod"}
+   :resource-paths #{"resources"}
+   )
   (comp
    ;; https://github.com/boot-clj/boot-cljs/tree/master/docs
    (cljs :optimizations :advanced :source-map false)
 
    ;; https://github.com/boot-clj/boot/blob/master/doc/boot.task.built-in.md#sift
-   (sift :include #{#"(^index\.html|^js\/core\.js|^data\/*|^images\/*|^style\/*)"})
+   (sift
+    :include
+    #{#"(^index\.html|^js\/core\.js|^data\/*|^images\/*|^style\/*|404\.md|_config\.yml)"})
 
    ;; https://github.com/boot-clj/boot/blob/master/doc/boot.task.built-in.md#target
    (target :dir #{"docs"})))

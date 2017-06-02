@@ -1,6 +1,9 @@
 (ns meetup.pages.navbar
   (:require
+
    [cljsjs.react-bootstrap]
+
+   [meetup.config :as config]
    [bidi.bidi :as bidi]
    [reagent.core :as reagent]))
 
@@ -26,8 +29,6 @@
 (def NavItem
   (reagent/adapt-react-class (aget js/ReactBootstrap "NavItem")))
 
-(def base-url "/meetup.clj")
-
 (defn navbar [app-routes page]
   [Navbar
    [Navbar-Header
@@ -38,7 +39,7 @@
    [Navbar-Collapse
     [Nav {:pullRight true :activeKey page}
      [NavItem {:href "https://www.meetup.com/clojure-tokyo/"}
-      [:img {:src (str base-url "/images/clojure.tokyo.jpeg")
+      [:img {:src (str config/BASE-URL "/images/clojure.tokyo.jpeg")
              :style {:height "100%" :width "auto"}}]]
      [NavItem {:eventKey :index :href (bidi/path-for app-routes :index)}
       [:i.fa.fa-calendar {:aria-hidden true}] "CALENDAR"]
