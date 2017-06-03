@@ -6,11 +6,20 @@ We’ll find a way. We always have. -Cooper #Interstellar
 
 
 # TODO
+- [ ] refactoring
+  - [ ] remove duplicate dir(docs, resources)
 - [ ] pull request && ci process
+  - [ ] [TRAVIS_BRANCH](https://docs.travis-ci.com/user/environment-variables/)
 - [ ] presentation page
 - [ ] input page
-- [ ] refactoring
-- [ ] gzip script
+  - [ ] https://github.com/reagent-project/reagent-cookbook/tree/master/recipes/input-validation
+  - [ ] https://github.com/reagent-project/reagent-cookbook/tree/master/recipes/markdown-editor
+  - [ ] https://github.com/github-tools/github
+- [ ] gzip scripts
+- [ ] [meetup api](https://www.meetup.com/meetup_api/auth/)
+- [ ] [export google calender](https://developers.google.com/google-apps/calendar/v3/reference/events/import)
+- [ ] search / filter
+
 
 # ref
 * http://d2.naver.com/helloworld/303083

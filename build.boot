@@ -2,6 +2,9 @@
 (def version "0.1.0-SNAPSHOT")
 
 (set-env!
+ :source-paths   #{"src/clj" "src/cljc"}
+ :resource-paths #{"resources"}
+
  :dependencies
  '[
    ;; dep
@@ -79,11 +82,16 @@
  '[adzerk.bootlaces :refer [bootlaces! build-jar push-snapshot push-release]]
  )
 
+(deftask check-data []
+  (require '[meetup.core :as meetup])
+  (apply (resolve 'meetup/check-data) [])
+  )
+
 (bootlaces! version :dont-modify-paths? true)
 
 (deftask dev []
   (set-env!
-   :source-paths   #{"src/clj" "src/cljs" "config/dev"}
+   :source-paths   #{"src/clj" "src/cljc" "src/cljs" "config/dev"}
    :resource-paths #{"resources"}
    )
 
@@ -105,7 +113,7 @@
 (deftask prod
   []
   (set-env!
-   :source-paths   #{"src/clj" "src/cljs" "config/prod"}
+   :source-paths   #{"src/clj" "src/cljc" "src/cljs" "config/prod"}
    :resource-paths #{"resources"}
    )
   (comp

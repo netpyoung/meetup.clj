@@ -18,10 +18,8 @@
    )
   )
 
+
 ;; TODO: need to handle fullcalendar's `googleCalendarError`
-
-;; https://www.meetup.com/meetup_api/docs/:urlname/events/?uri=%2Fmeetup_api%2Fdocs%2F%3Aurlname%2Fevents%2F#list
-
 
 
 (def app-routes
@@ -122,7 +120,6 @@
                      ;;      (js/moment "YYYY-MM-DD HH:mm:ss")
                      ;;      (.month ))
                      ;;  2)
-
                      (callback (clj->js events))
                      )
                    )

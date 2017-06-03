@@ -19,6 +19,10 @@ new ticket page
 events.json => edn with look up table
 custom event =>  + google calendar
 
+* google calendar
+  - Queries per day	1,000,000
+  - Queries per 100 seconds per user	500
+
 # externs
 boot-cljs
 https://github.com/boot-clj/boot-cljs/wiki/Usage#preamble-and-externs-files
