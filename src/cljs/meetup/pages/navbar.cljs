@@ -40,7 +40,7 @@
     [Nav {:pullRight true :activeKey page}
      [NavItem {:href "https://www.meetup.com/clojure-tokyo/"}
       [:img {:src (str config/BASE-URL "/images/clojure.tokyo.jpeg")
-             :style {:height "100%" :width "auto"}}]]
+             :style {:height "40px" :width "auto"}}]]
      [NavItem {:eventKey :index :href (bidi/path-for app-routes :index)}
       [:i.fa.fa-calendar {:aria-hidden true}] "CALENDAR"]
      [NavItem {:eventKey :list :href (bidi/path-for app-routes :list)}

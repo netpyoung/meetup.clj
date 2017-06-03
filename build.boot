@@ -39,6 +39,8 @@
 
    [prismatic/dommy "1.1.0"]
    [prismatic/schema "1.1.6"]
+   [metosin/schema-tools "0.9.0"]
+
 
 
    ;; [stencil "0.5.0" :exclusions [org.clojure/clojure]]
@@ -55,6 +57,8 @@
    [weasel                  "0.7.0"  :scope "test"]
    [org.clojure/tools.nrepl "0.2.12" :scope "test"]
 
+   ;; https://github.com/Raynes/conch
+   [me.raynes/conch "0.8.0"]
    ]
  )
 
