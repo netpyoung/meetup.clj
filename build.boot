@@ -59,6 +59,10 @@
 
    ;; https://github.com/Raynes/conch
    [me.raynes/conch "0.8.0"]
+
+   ;; https://github.com/weavejester/environ
+   [environ "1.1.0"]
+   [boot-environ "1.1.0"]
    ]
  )
 
@@ -84,12 +88,10 @@
  '[adzerk.bootlaces      :refer :all]
  '[pandeiro.boot-http    :refer [serve]]
  '[adzerk.bootlaces :refer [bootlaces! build-jar push-snapshot push-release]]
+ '[environ.boot :refer [environ]]
+ '[environ.core :refer [env]]
  )
 
-(deftask check-data []
-  (require '[meetup.core :as meetup])
-  (apply (resolve 'meetup/check-data) [])
-  )
 
 (bootlaces! version :dont-modify-paths? true)
 
@@ -131,3 +133,13 @@
 
    ;; https://github.com/boot-clj/boot/blob/master/doc/boot.task.built-in.md#target
    (target :dir #{"docs"})))
+
+
+(deftask check-data []
+  (comp
+   (environ :env {:travis-branch "request-branch"})
+   (with-pre-wrap fileset
+     (println (env :travis-branch))
+     (require '[meetup.core :as meetup])
+     (apply (resolve 'meetup/check-data) [])
+     fileset)))

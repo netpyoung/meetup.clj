@@ -1,0 +1,10 @@
+@startuml
+database github
+
+actor -> (event)
+(event) --> (github) : push `request` branch
+
+(github) <-> (travis-ci) : hook & push `master` branch
+(github) --> (github pages) : publish
+
+@enduml
