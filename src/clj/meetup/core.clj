@@ -8,6 +8,13 @@
    [environ.core :refer [env]]
    ))
 
+(defn always-true []
+  (= 42 42))
+
+(defn when-vs-if []
+  (if 42 42 nil))
+
+
 (def data-file-fpath  "data/events.edn")
 
 ;; > (boolean (Boolean/valueOf "TRUE"))

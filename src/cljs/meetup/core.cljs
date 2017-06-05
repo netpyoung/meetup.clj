@@ -13,7 +13,6 @@
    ;; [cognitect.transit :as transit]
    ))
 
-
 (defn on-js-reload
   []
   (->> (. js/document (getElementById "app"))

@@ -27,7 +27,7 @@ We’ll find a way. We always have. -Cooper #Interstellar
 - [ ] [meetup api](https://www.meetup.com/meetup_api/auth/)
 - [ ] [export google calender](https://developers.google.com/google-apps/calendar/v3/reference/events/import)
 - [ ] search / filter
-
+- [ ] [JVM opts](https://dev.clojure.org/display/design/Improving+Clojure+Start+Time)
 
 # ref
 * http://d2.naver.com/helloworld/303083
