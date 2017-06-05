@@ -13,6 +13,8 @@
  :dependencies
  (expand-keywords
   '[
+    :environ
+    :boot-support
     ;; dep
     [org.clojure/clojure "1.8.0"]
     [org.clojure/clojurescript "1.9.542"]
@@ -65,10 +67,6 @@
 
     ;; https://github.com/Raynes/conch
     [me.raynes/conch "0.8.0"]
-
-    ;; https://github.com/weavejester/environ
-    [environ "1.1.0"]
-    [boot-environ "1.1.0"]
 
     ;; https://github.com/tolitius/boot-check
     [tolitius/boot-check "0.1.4"]

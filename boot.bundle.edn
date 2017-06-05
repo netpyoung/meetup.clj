@@ -1,1 +1,13 @@
-{}
+{
+ :boot-support
+ [
+  :environ
+  ]
+ :environ
+ [
+  ;; https://github.com/weavejester/environ
+  [environ "1.1.0"]
+  [boot-environ "1.1.0"]
+
+  ]
+ }
