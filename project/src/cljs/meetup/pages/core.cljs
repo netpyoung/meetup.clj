@@ -162,6 +162,7 @@
 
 (defmethod page-contents :chat []
   [:span
+   [:h2 "https://gitter.im/clojure_tokyo/Lobby/"]
    [gitter/component "https://gitter.im/clojure_tokyo/Lobby/~embed"]])
 
 (defmethod page-contents :four-o-four []

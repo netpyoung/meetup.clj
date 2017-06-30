@@ -1,0 +1,86 @@
+{
+  "results": [
+    {
+      "utc_offset": 32400000,
+      "venue": {
+        "country": "jp",
+        "localized_country_name": "일본",
+        "city": "도쿄",
+        "address_1": "Shibuya 2-2-16 1F",
+        "name": "Tacchi",
+        "lon": 139.701767,
+        "id": 25064594,
+        "lat": 35.659779,
+        "repinned": false
+      },
+      "rsvp_limit": 20,
+      "headcount": 0,
+      "visibility": "public",
+      "waitlist_count": 0,
+      "created": 1491311110000,
+      "maybe_rsvp_count": 0,
+      "description": "<p>As discussed during the first meetup, we will keep the gatherings on a regular monthly basis: the first Monday of the month, at 7pm. (If the first Monday is a national holiday, we will meet the week after.)</p> <p>\n\n\n最初のミートアップで話し合ったとおり、毎月定期的に、第1月曜日午後7時にこの集まりを続けることにします。(第1月曜日が祝日の場合には、1週間後に開催します。)</p>",
+      "how_to_find_us": "The Tacchi Studios' office is only 11 minutes from Shibuya station by foot: https://goo.gl/maps/e58KJ2VoTFr",
+      "event_url": "https://www.meetup.com/clojure-tokyo/events/238952020/",
+      "yes_rsvp_count": 16,
+      "duration": 7200000,
+      "name": "TBD ● 未定",
+      "id": "238952020",
+      "time": 1496656800000,
+      "updated": 1491534529000,
+      "group": {
+        "join_mode": "open",
+        "created": 1487246462000,
+        "name": "clojure.tokyo - Tokyo Clojure Meetup",
+        "group_lon": 139.77000427246094,
+        "id": 22416157,
+        "urlname": "clojure-tokyo",
+        "group_lat": 35.66999816894531,
+        "who": "Clojurians"
+      },
+      "status": "upcoming"
+    },
+    {
+      "utc_offset": 32400000,
+      "rsvp_limit": 20,
+      "headcount": 0,
+      "visibility": "public",
+      "waitlist_count": 0,
+      "created": 1491311217000,
+      "maybe_rsvp_count": 0,
+      "description": "<p>As discussed during the first meetup, we will keep the gatherings on a regular monthly basis: the first Monday of the month, at 7pm. (If the first Monday is a national holiday, we will meet the week after.)</p> <p>\n\n\n最初のミートアップで話し合ったとおり、毎月定期的に、第1月曜日午後7時にこの集まりを続けることにします。(第1月曜日が祝日の場合には、1週間後に開催します。) </p>",
+      "event_url": "https://www.meetup.com/clojure-tokyo/events/238952073/",
+      "yes_rsvp_count": 3,
+      "duration": 7200000,
+      "name": "TBD ● 未定",
+      "id": "238952073",
+      "time": 1499076000000,
+      "updated": 1491534600000,
+      "group": {
+        "join_mode": "open",
+        "created": 1487246462000,
+        "name": "clojure.tokyo - Tokyo Clojure Meetup",
+        "group_lon": 139.77000427246094,
+        "id": 22416157,
+        "urlname": "clojure-tokyo",
+        "group_lat": 35.66999816894531,
+        "who": "Clojurians"
+      },
+      "status": "upcoming"
+    }
+  ],
+  "meta": {
+    "next": "",
+    "method": "Events",
+    "total_count": 2,
+    "link": "https://api.meetup.com/2/events",
+    "count": 2,
+    "description": "Access Meetup events using a group, member, or event id. Events in private groups are available only to authenticated members of those groups. To search events by topic or location, see [Open Events](/meetup_api/docs/2/open_events).",
+    "lon": "",
+    "title": "Meetup Events v2",
+    "url": "https://api.meetup.com/2/events?offset=0&sign=True&format=json&limited_events=False&group_urlname=clojure-tokyo&photo-host=public&page=20&fields=&order=time&desc=false&status=upcoming",
+    "id": "",
+    "updated": 1491534600000,
+    "lat": ""
+  }
+}

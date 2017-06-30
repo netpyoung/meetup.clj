@@ -141,7 +141,7 @@
     #{#"(^index\.html|^js\/core\.js|^data\/*|^images\/*|^style\/*|404\.md|_config\.yml)"})
 
    ;; https://github.com/boot-clj/boot/blob/master/doc/boot.task.built-in.md#target
-   (target :dir #{"docs"})))
+   (target :dir #{"../docs"})))
 
 
 (deftask check-data []

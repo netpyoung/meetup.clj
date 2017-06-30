@@ -1,6 +1,6 @@
 sudo: false
 language: java
-script: boot check-data
+script: rake check_data
 install:
   - mkdir -p ~/bin
   - export PATH=~/bin:$PATH
