@@ -21,6 +21,13 @@ task :dist do
     end
 end
 
+desc "codeformat"
+task :codeformat do
+    Dir.chdir("project") do
+        sh "boot codeformat"
+    end
+end
+
 task :default do
     sh "rake -T"
 end

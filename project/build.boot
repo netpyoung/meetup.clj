@@ -70,6 +70,10 @@
 
     ;; https://github.com/tolitius/boot-check
     [tolitius/boot-check "0.1.4"]
+
+    ;; https://github.com/pesterhazy/boot-fmt
+    ;; // https://github.com/kkinnear/zprint
+    [boot-fmt/boot-fmt "0.1.6" :scope "test"]
     ]
   ))
 
@@ -98,6 +102,7 @@
  '[environ.boot :refer [environ]]
  '[environ.core :refer [env]]
  '[tolitius.boot-check :as check]
+ '[boot-fmt.core :refer [fmt]]
  )
 
 
@@ -155,4 +160,20 @@
      (require '[meetup.core :as meetup])
      (apply (resolve 'meetup/check-data) [])
      fileset)
+   ))
+
+(deftask codeformat []
+  (set-env!
+   :source-paths   #{"src/clj" "src/cljc" "src/cljs" "config/prod"}
+   :resource-paths #{"resources"}
+   )
+  (comp
+   (fmt
+    ;; :mode :diff
+    :mode :overwrite
+    :really true
+    :source true
+    :options {:style :community
+              :binding {:justify? true}
+              })
    ))
