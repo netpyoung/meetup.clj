@@ -1,20 +1,20 @@
 # -*- coding: utf-8 -*-
 
-desc "dev"
+desc "develop mode"
 task :dev do
     Dir.chdir("project") do
         sh "boot dev"
     end
 end
 
-desc "check_data"
+desc "validate data file"
 task :check_data do
     Dir.chdir("project") do
         sh "boot check-data"
     end
 end
 
-desc "dist"
+desc "generate github-pages"
 task :dist do
     Dir.chdir("project") do
         sh "boot prod"

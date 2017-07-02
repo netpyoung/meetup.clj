@@ -25,73 +25,40 @@
 
 
 ;; https://fullcalendar.io/docs/event_data/Event_Object/
-(defn month-calendar
-  []
-  [fullcalendar/component
-   {:header {:left "", :center "title", :right "today prev,next"},
-    :views {},
-    :locale "en",
-    :defaultView "month",
-    :defaultDate (.format (js/moment)),
-    :timeFormat "H:mm",
-    :navLinks true,
-    :editable false,
-    :eventLimit true,
-    :events (fn [start end timezone callback]
-              (ajax/GET (str config/BASE-URL "/data/events.edn")
-                        {:response-format (edn/edn-response-format),
-                         :handler (fn [resp]
-                                    (let [events (:events resp)]
-                                      ;; (=
-                                      ;;  (-> "2017-03-23 19:30:00"
-                                      ;;      (js/moment "YYYY-MM-DD HH:mm:ss")
-                                      ;;      (.month ))
-                                      ;;  2)
-                                      (callback (clj->js events))))})),
-    ;; https://fullcalendar.io/docs/google_calendar/
-    :googleCalendarApiKey "AIzaSyBzjvpScabjRmNgYM6xDmZQnAKRLy9j_iE",
-    :eventSources [{:googleCalendarId
-                    "jmnbmacphf206ju2ulmda01n9k@group.calendar.google.com",
-                    :color "blue"}],
-    ;; https://fullcalendar.io/docs/mouse/eventClick/
-    :eventClick (fn [event jsEvent view] (js/alert "hi") false),
-    ;; https://fullcalendar.io/docs/selection/select_method/
-    :selectable true,
-    :select (fn [start end jsEvent view]
-              (js/alert "[TODO] need to make add page")
-              ;; # react-popup : http://minutemailer.github.io/react-popup/
-              false)}])
+
 
 (defn list-calendar
   []
   [fullcalendar/component
-   {:header {:left "", :center "title", :right "today prev,next"},
-    :views {},
-    :locale "en",
-    :defaultView "listMonth",
-    :defaultDate (.format (js/moment)),
-    :timeFormat "H:mm",
-    :navLinks true,
-    :editable false,
-    :eventLimit true,
-    :events (fn [start end timezone callback]
-              (ajax/GET (str config/BASE-URL "/data/events.edn")
-                        {:response-format (edn/edn-response-format),
-                         :handler (fn [resp]
-                                    (let [events (:events resp)]
-                                      ;; (=
-                                      ;;  (-> "2017-03-23 19:30:00"
-                                      ;;      (js/moment "YYYY-MM-DD HH:mm:ss")
-                                      ;;      (.month ))
-                                      ;;  2)
-                                      (callback (clj->js events))))})),
+   {:header      {:left "" :center "title" :right "today prev,next"}
+    :views       {}
+    :locale      "en"
+    :defaultView "listMonth"
+    :defaultDate (.format (js/moment))
+    :timeFormat  "H:mm"
+    :navLinks    true
+    :editable    false
+    :eventLimit  true
+    :events      (fn [start end timezone callback]
+                   (ajax/GET
+                    (str config/BASE-URL "/data/events.edn")
+                    {:response-format (edn/edn-response-format)
+                     :handler         (fn [resp]
+                                        (let [events (:events resp)]
+                                          ;; (=
+                                          ;;  (-> "2017-03-23 19:30:00"
+                                          ;;      (js/moment "YYYY-MM-DD
+                                          ;;      HH:mm:ss")
+                                          ;;      (.month ))
+                                          ;;  2)
+                                          (callback (clj->js events))))}))
     #_(fn [start end timezone callback]
         (ajax/GET "/test.edn"
                   {:handler (fn [resp]
                               (let [x (reader/read-string resp)]
                                 (println x)
-                                (callback (clj->js [(:event x)]))))})),
-    :eventClick (fn [calEvent jsEvent view] (js/alert "hi") false)}])
+                                (callback (clj->js [(:event x)]))))}))
+    :eventClick  (fn [calEvent jsEvent view] (js/alert "hi") false)}])
 
 ;; [:i.large.material-icons "add"]
 

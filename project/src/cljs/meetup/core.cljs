@@ -19,14 +19,14 @@
 (defn ^:export start
   []
   (accountant/configure-navigation!
-   {:nav-handler (fn [path]
-                   (let [match        (bidi/match-route pages/app-routes path)
-                         ;; current-page (str "/meetup.clj/" (:handler match))
-                         current-page (:handler match)
-                         route-params (:route-params match)]
-                     (session/put! :route
-                                   {:current-page current-page,
-                                    :route-params route-params}))),
+   {:nav-handler  (fn [path]
+                    (let [match        (bidi/match-route pages/app-routes path)
+                          ;; current-page (str "/meetup.clj/" (:handler match))
+                          current-page (:handler match)
+                          route-params (:route-params match)]
+                      (session/put! :route
+                                    {:current-page current-page
+                                     :route-params route-params})))
     :path-exists? (fn [path]
                     (boolean (bidi/match-route pages/app-routes path)))})
   (accountant/dispatch-current!)

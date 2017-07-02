@@ -1,0 +1,18 @@
+@startuml
+database github
+
+actor -> (event register page) : write event
+(event register page) --> (github api)
+
+note left
+auth,
+https://developer.github.com/v3/repos/contents/#update-a-file
+end note
+
+(github api) --> (github) : push `request` branch
+
+(github) <-> (travis-ci) : hook & push `master` branch
+
+(github) --> (github pages) : publish
+
+@enduml

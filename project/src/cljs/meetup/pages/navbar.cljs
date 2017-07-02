@@ -31,14 +31,14 @@
      [:a {:href (bidi/path-for app-routes :index)}
       [:i.fa.fa-home {:aria-hidden true}]]] [Navbar-Toggle]]
    [Navbar-Collapse
-    [Nav {:pullRight true, :activeKey page}
+    [Nav {:pullRight true :activeKey page}
      [NavItem {:href "https://www.meetup.com/clojure-tokyo/"}
       [:img
-       {:src (str config/BASE-URL "/images/clojure.tokyo.jpeg"),
-        :style {:height "40px", :width "auto"}}]]
-     [NavItem {:eventKey :index, :href (bidi/path-for app-routes :index)}
+       {:src   (str config/BASE-URL "/images/clojure.tokyo.jpeg")
+        :style {:height "40px" :width "auto"}}]]
+     [NavItem {:eventKey :index :href (bidi/path-for app-routes :index)}
       [:i.fa.fa-calendar {:aria-hidden true}] "CALENDAR"]
-     [NavItem {:eventKey :list, :href (bidi/path-for app-routes :list)}
+     [NavItem {:eventKey :list :href (bidi/path-for app-routes :list)}
       [:i.fa.fa-list {:aria-hidden true}] "LIST"]
-     [NavItem {:eventKey :chat, :href (bidi/path-for app-routes :chat)}
+     [NavItem {:eventKey :chat :href (bidi/path-for app-routes :chat)}
       [:i.fa.fa-comments {:aria-hidden true}] "CHAT"]]]])

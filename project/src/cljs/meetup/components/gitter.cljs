@@ -7,5 +7,5 @@
   [src]
   (reagent/create-class
    {:reagent-render (fn [src] [:iframe
-                               {:src src,
+                               {:src   src
                                 :style {:height (.-innerHeight js/window)}}])}))
