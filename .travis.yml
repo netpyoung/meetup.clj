@@ -17,3 +17,6 @@ cache:
   - $HOME/.boot/cache/bin
   - $HOME/.boot/cache/lib
   - $HOME/bin
+branches:
+  only:
+  - request
