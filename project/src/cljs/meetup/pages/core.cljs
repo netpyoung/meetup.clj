@@ -3,6 +3,7 @@
             [meetup.components.fullcalendar :as fullcalendar]
             [meetup.components.gitter :as gitter]
             [meetup.pages.navbar :as navbar]
+            [meetup.pages.add-schedule :as add-schedule]
             [cljsjs.material-ui]
             [cljsjs.material-ui-svg-icons]
             [cljsjs.moment]
@@ -18,14 +19,53 @@
 
 (def app-routes
   [(str config/BASE-URL "/")
-   [["" :index] ["list" :list] ["chat" :chat] [true :four-o-four]]])
+   [["" :index]
+    ["list" :list]
+    ["chat" :chat]
+    ["add" :add]
+    [true :four-o-four]]])
 
 ;; http://materializecss.com/icons.html
 ;; http://htmltohiccup.herokuapp.com/
 
 
 ;; https://fullcalendar.io/docs/event_data/Event_Object/
-
+(defn month-calendar
+  []
+  [fullcalendar/component
+   {:header {:left "", :center "title", :right "today prev,next"},
+    :views {},
+    :locale "en",
+    :defaultView "month",
+    :defaultDate (.format (js/moment)),
+    :timeFormat "H:mm",
+    :navLinks true,
+    :editable false,
+    :eventLimit true,
+    :events (fn [start end timezone callback]
+              (ajax/GET (str config/BASE-URL "/data/events.edn")
+                        {:response-format (edn/edn-response-format),
+                         :handler (fn [resp]
+                                    (let [events (:events resp)]
+                                      ;; (=
+                                      ;;  (-> "2017-03-23 19:30:00"
+                                      ;;      (js/moment "YYYY-MM-DD HH:mm:ss")
+                                      ;;      (.month ))
+                                      ;;  2)
+                                      (callback (clj->js events))))})),
+    ;; https://fullcalendar.io/docs/google_calendar/
+    :googleCalendarApiKey "AIzaSyBzjvpScabjRmNgYM6xDmZQnAKRLy9j_iE",
+    :eventSources [{:googleCalendarId
+                    "jmnbmacphf206ju2ulmda01n9k@group.calendar.google.com",
+                    :color "blue"}],
+    ;; https://fullcalendar.io/docs/mouse/eventClick/
+    :eventClick (fn [event jsEvent view] (js/alert "hi") false),
+    ;; https://fullcalendar.io/docs/selection/select_method/
+    :selectable true,
+    :select (fn [start end jsEvent view]
+              (js/alert "[TODO] need to make add page")
+              ;; # react-popup : http://minutemailer.github.io/react-popup/
+              false)}])
 
 (defn list-calendar
   []
@@ -88,12 +128,17 @@
    [:pre.verse
     "What you areng for, I do not have. How could I have, what does not exist?"]])
 
+(defmethod page-contents :add
+  []
+  (add-schedule/page))
+
 
 (defmethod page-contents :default
   []
   "Configured routes, missing an implementation, go here"
   [:span [:h1 "404: My basdfad"]
    [:pre.verse "This page should be here, but I never created it."]])
+
 
 (defn page
   []

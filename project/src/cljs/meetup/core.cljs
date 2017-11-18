@@ -9,7 +9,11 @@
             ;; [bidi.schema]
             ;; [schema.core :as schema :include-macros true]
             ;; [cognitect.transit :as transit]
-   ))
+            [taoensso.timbre :as timbre
+             :refer-macros [log  trace  debug  info  warn  error  fatal  report
+                            logf tracef debugf infof warnf errorf fatalf reportf
+                            spy get-env]])
+  )
 
 (defn on-js-reload
   []

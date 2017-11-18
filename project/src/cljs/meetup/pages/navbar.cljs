@@ -40,5 +40,7 @@
       [:i.fa.fa-calendar {:aria-hidden true}] "CALENDAR"]
      [NavItem {:eventKey :list :href (bidi/path-for app-routes :list)}
       [:i.fa.fa-list {:aria-hidden true}] "LIST"]
+     [NavItem {:eventKey :add :href (bidi/path-for app-routes :add)}
+      [:i.fa.fa-list {:aria-hidden true}] "ADD"]
      [NavItem {:eventKey :chat :href (bidi/path-for app-routes :chat)}
       [:i.fa.fa-comments {:aria-hidden true}] "CHAT"]]]])

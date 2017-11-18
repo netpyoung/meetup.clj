@@ -20,6 +20,7 @@
 
 ;; [TRAVIS_BRANCH, TRAVIS_PULL_REQUEST, TRAVIS_PULL_REQUEST_BRANCH]
 
+
 (defn check-data
   []
   (println "hi" (env :travis-branch))
@@ -33,3 +34,18 @@
       (let [result (s/check scheme event)]
         (if-not (nil? result) (println event result))))
     (System/exit 0)))
+
+;; TODO(kep): auto generate result.edn
+;; TODO(kep): apply nio2  - https://github.com/ajoberstar/ike.cljj
+;; (let [matcher (.getPathMatcher
+;;                (java.nio.file.FileSystems/getDefault)
+;;                "glob:*.{edn}")
+;;       events (->> (clojure.java.io/file "../__events")
+;;                   file-seq
+;;                   (filter #(.isFile %))
+;;                   (filter #(.matches matcher (.getFileName (.toPath %))))
+;;                   (map slurp)
+;;                   (mapv edn/read-string)
+;;                   (assoc {} :events))]
+;;   (with-open [w (io/writer  "../docs/autogen_result.edn")]
+;;     (.write w (str events))))
